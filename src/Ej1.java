@@ -22,19 +22,22 @@ public class Ej1 {
                     }else{
                         indice++;
                     }
-
                     // Si lo he encontrado
                     if(encontrado) {
                         // ya existe el producto porque indice apunta a su posicion
                         int cantidad = Integer.parseInt(datos[indice][1])+Integer.parseInt(partesLinea[0]);
+                        datos[indice][1]=String.valueOf(cantidad);
+                    } else{
+                        // Añadir elemento
+                        //En dinámico add
+                        datos[numeroProductos][0]=partesLinea[0];
+                        datos[numeroProductos][1]=partesLinea[1];
                     }
-
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
     public static void main(String[] args) {
         String[][] datos = new String[100][2]; // Maximo 100 productos
